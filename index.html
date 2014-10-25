@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<script type="text/javascript" src="assets/myscript.js"></script>
+<link href="assets/style.css" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="main">
+		<div id="header" onclick="test()">
+			<h1>This is Header</h1>
+		</div>
+		<div id="left-panel">
+			<h2>Calculate Premium</h2>
+			<!-- space for Plan -->
+			<div class="container">
+				<div class="label-panel">Select Plan
+				</div>
+				<div class="control-panel">
+					<select id="plan" onchange="populatePackage()">
+						<option value="NOTHING" selected="selected">-- Select Plan --</option>
+						<option value="InvestAssure">Invest Assure</option>
+						<option value="LifeLongAssure">LifeLong Assure</option>
+						<option value="GuaranteeAssure">Guarantee Assure</option>
+						<option value="ISecure">ISecure</option>
+					</select>
+				</div>
+			</div>
+			
+			<!-- space for package -->
+			<div class="container">
+				<div class="label-panel">Select Package</div>
+				<div class="control-panel" id="ctl-pkg">
+					<select id="package" onchange="populateEntryAge()">
+					</select>
+				</div>
+			</div>
+			
+			<!-- space for age -->
+			<div class="container">
+				<div class="label-panel">Select Age :</div>
+				<div class="control-panel">
+					<select id="age" onchange="populatePolicyTerm()">
+					</select>
+				</div>
+			</div>	
+			
+	
+			<!-- space for policy term -->
+			<div class="container">
+				<div class="label-panel">Select Benefit Term :</div>
+				<div class="control-panel">
+					<select id="policyTerm" onchange="populatePremiumTerm()">
+					</select>
+				</div>
+
+			</div>	
+
+			<!-- space for premium paying term -->
+			<div class="container">
+				<div class="label-panel">Select Premium paying term :</div>
+				<div class="control-panel">
+					<select id="premiumTerm">
+					</select>
+				</div>
+			</div>	
+
+			<!-- space for Sex -->
+			<div class="container">
+				<div class="label-panel">Select Sex :</div>
+				<div class="control-panel">
+					<input type="radio" value="MALE" name="sex">Male
+					<input type="radio" value="FEMALE" name="sex">Female
+				</div>
+			</div>
+
+			<!-- space for Radio -->
+			<div class="container">
+				<div class="label-panel">Select Calculation option :</div>
+				<div class="control-panel">
+					<input type="radio" value="premium" name="calculator">Calculate Premium
+					<input type="radio" value="sa" name="calculator">Calculate Sum Assured
+				</div>
+			</div>
+						
+			<!-- space for SA -->
+			<div class="container">
+				<div class="label-panel">Enter SA :</div>
+				<div class="control-panel">
+					<input type="text" id="sumAssured" onblur="validateSA()"></input>
+				</div>
+			</div>		
+			<div class="container">
+				<div class="label-panel"></div>
+				<div class="control-panel">
+					<input type="button" onclick="calculatePremium()" value="Calculate Premium"></div>
+				</div>
+			<h2>calculated premium</h2>
+			
+			<!-- space for Premium -->
+			<div class="container">
+				<table>
+					<tr><td style="width:40%">Tabular Annual Premium</td><td style="text-align:right; padding-right:10px">15000</td></tr>
+					<tr><td>High SA Rebate</td><td style="text-align:right; padding-right:10px">100</td></tr>
+					<tr><td>Premium after HSAR</td><td style="text-align:right; padding-right:10px">14900</td></tr>
+				</table>
+				<table>
+					<tr><th style="width:40%">Frequency</th><th class="col-size">Annual Premium</th><th class="col-size">Half-Yearly Premium</th><th class="col-size">Quarterly Premium</th><th class="col-size">Monthly Premium</th></tr>
+					<tr><td>Premium</td><td style="text-align:right">15000</td><td style="text-align:right">15000</td><td>15000</td><td style="text-align:right">15000</td></tr>
+					<tr><td>Service Tax & Cess</td><td>100</td><td>75</td><td>50</td><td>25</td></tr>
+					<tr><td>Premium to be paid</td><td>15100</td><td>15075</td><td>15050</td><td>15025</td></tr>
+				</table>
+		</div>
+		<div id="footer">
+			<h4>This is footer</h4>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
